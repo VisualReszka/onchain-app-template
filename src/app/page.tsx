@@ -1,4 +1,5 @@
 'use client';
+import IdentityWrapper from '../components/IdentityWrapper';
 import Footer from 'src/components/Footer';
 import TransactionWrapper from 'src/components/TransactionWrapper';
 import WalletWrapper from 'src/components/WalletWrapper';
@@ -38,7 +39,11 @@ export default function Page() {
           </div>
         </div>
         {address ? (
-          <TransactionWrapper address={address} />
+          <>
+            {/* Add IdentityWrapper here */}
+            <IdentityWrapper address={address} />
+            <TransactionWrapper address={address} />
+          </>
         ) : (
           <WalletWrapper
             className="w-[450px] max-w-full"
